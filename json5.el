@@ -1,3 +1,33 @@
+;;; json5-ts-mode.el --- tree-sitter support for JSON5  -*- lexical-binding: t; -*-
+
+;; Copyright (C) 2024 Demis Balbach <db@minikn.xyz>
+
+;; Author     : Demis Balbach <db@minikn.xyz>
+;; Maintainer : Demis Balbach <db@minikn.xyz>
+;; Created    : February 2024
+;; Keywords   : json5 languages tree-sitter
+
+;; This file is not part of GNU Emacs.
+
+;; `json5-ts-mode' is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; `json5-ts-mode' is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs.  If not, see <https://www.gnu.org/licenses/>.
+
+;;; Commentary:
+;; Most of the stuff is copied from `json-ts-mode', originally
+;; authored by Theodor Thornhill.
+
+;;; Code:
+
 (require 'treesit)
 (require 'rx)
 
@@ -9,7 +39,7 @@
 
 
 (defcustom json5-ts-mode-indent-offset 2
-  "Number of spaces for each indentation step in `json-ts-mode'."
+  "Number of spaces for each indentation step in `json5-ts-mode'."
   :version "29.1"
   :type 'integer
   :safe 'integerp
@@ -35,7 +65,7 @@
     (modify-syntax-entry ?\n "> b"  table)
     (modify-syntax-entry ?\^m "> b" table)
     table)
-  "Syntax table for `json-ts-mode'.")
+  "Syntax table for `json5-ts-mode'.")
 
 
 (defvar json5-ts--indent-rules
