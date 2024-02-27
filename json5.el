@@ -81,18 +81,18 @@
    :language 'json5
    :feature 'comment
    '((comment) @font-lock-comment-face)
-
-   :language 'json5
-   :feature 'string
-   '((string) @font-lock-string-face)
-
+   
    :language 'json5
    :feature 'bracket
    '((["[" "]" "{" "}"]) @font-lock-bracket-face)
 
-   ;:language 'json5
-   ;:feature 'constant
-   ;'((member: value: "true") @font-lock-constant-face)
+   :language 'json5
+   :feature 'constant
+   '(["true" "false" "null"] @font-lock-constant-face)
+
+   :language 'json5
+   :feature 'string
+   '((string) @font-lock-string-face)
 
    :language 'json5
    :feature 'identifier
